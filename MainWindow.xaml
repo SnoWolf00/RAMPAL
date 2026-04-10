@@ -1,0 +1,82 @@
+﻿<Window x:Name="Box" x:Class="RobotInterface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RobotInterface"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="29"/>
+            <RowDefinition Height="154.04"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="30" Focusable="False"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="emission" Header="Emission" Background="#FF9A9696" BorderBrush="{x:Null}" Grid.Column="1" Grid.Row="1">
+            <TextBox x:Name="textBoxEmission" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="{x:Null}" TextChanged="TextBox_TextChanged" AcceptsReturn="True" KeyUp="TextBoxEmission_KeyUp"/>
+        </GroupBox>
+        <GroupBox x:Name="Reception" Header="Réception" Background="#FFBDBDBD" Grid.Column="3" BorderBrush="Black" Grid.Row="1">
+            <TextBox x:Name="TextBoxréception" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True"/>
+        </GroupBox>
+        <StackPanel Orientation="Horizontal"  Grid.Column="1" Grid.Row="4" >
+            <GroupBox x:Name="Leds" Header="Leds" BorderBrush="Black" HorizontalAlignment="Left" Margin="5"  Grid.Column="1" Grid.Row="4" Width="67" VerticalAlignment="Top">
+                <StackPanel>
+                    <CheckBox Name="Led1" Content="Led1" IsChecked="False" Margin="5" />
+                    <CheckBox Name="Led2" Content="Led2" IsChecked="False"  Margin="5" />
+                    <CheckBox Name="Led3" Content="Led3" IsChecked="False" Margin="5"  />
+                </StackPanel>
+            </GroupBox>
+            <GroupBox x:Name="IR" Header="Télémètres IR" BorderBrush="Black" Margin="5"  Grid.Column="1" Grid.Row="4" Width="124" VerticalAlignment="Top">
+                <StackPanel>
+                    <TextBlock Name="IRG" Text="IR Gauche :" Margin="5"/>
+                    <TextBlock Name="IRC" Text="IR Centre :" Margin="5"/>
+                    <TextBlock Name="IRD" Text="IR Droit :" Margin="5"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox x:Name="Moteur" Header="Moteur" BorderBrush="Black" Margin="5"  Width="140" VerticalAlignment="Top">
+                <StackPanel>
+                    <TextBlock Name="MG" Text="Vitesse Gauche :" Margin="2"/>
+                    <TextBlock Name="MD" Text="Vitesse Droite :" Margin="2"/>
+                </StackPanel>
+            </GroupBox>
+            
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"  Grid.Column="3" Grid.Row="4">
+
+            <GroupBox x:Name="Distance" Header="Distance" BorderBrush="Black" Margin="5"  Width="140" VerticalAlignment="Top">
+                <StackPanel>
+                    <TextBlock Name="X" Text="X :" Margin="2"/>
+                    <TextBlock Name="Y" Text="Y :" Margin="2"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+        <Button x:Name="buttonEnvoyer" Grid.Column="3" Content="Envoyer" Grid.Row="3" Width="54" Click="buttonEnvoyer_Click" Margin="28,1,0,0" HorizontalAlignment="Left"/>
+        <Button x:Name="ButtonClear" Grid.Column="3" Content="Clear" Grid.Row="3" Width="50" Click="ButtonClear_Click" Margin="209,0,0,3" />
+        <Button x:Name="Test" Grid.Column="3" Content="Test" HorizontalAlignment="Left" Margin="111,0,0,0" Grid.Row="3" Click="Test_Click" Width="54"/>
+
+
+    </Grid>
+
+</Window>
